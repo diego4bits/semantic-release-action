@@ -1,0 +1,15 @@
+{
+  "name": "demo-semantic-release-java",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "semantic-release": "^23.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/exec": "^6.0.0"
+  }
+}
