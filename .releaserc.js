@@ -8,7 +8,8 @@ const commitTemplate = readFileAsync(path.join(TEMPLATE_DIR,'/commit-template.hb
 module.exports = {
 
   branches: [
-    "master"
+    "master",
+    "main"
   ],
   plugins: [
     [
