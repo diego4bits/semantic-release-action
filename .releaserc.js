@@ -9,7 +9,11 @@ module.exports = {
 
   branches: [
     "master",
-    "main"
+    "main",
+    {
+      name: 'develop',
+      prerelease: true
+    }
   ],
   plugins: [
     [
