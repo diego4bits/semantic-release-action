@@ -8,8 +8,7 @@ const commitTemplate = readFileAsync(path.join(TEMPLATE_DIR,'/commit-template.hb
 module.exports = {
 
   branches: [
-    "dev*",
-    "main",
+    "master",
   ],
   plugins: [
     [
@@ -34,6 +33,7 @@ module.exports = {
           },
           helpers: {
             formatDate: function(date){
+              if(!date) date = new Date();
               return dateFormat(date, 'yyy-mm-dd HH:MM:ss');
             },
             split: function(string){
@@ -41,7 +41,7 @@ module.exports = {
             },
             formatDateCol: function(date) {
               if(!date) date = new Date();
-              let formattedDate = date.toLocaleString('en-US', { timeZone: 'America/Bogota', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).replace(',','');
+              let formattedDate = date.toLocaleString('en-US', { timeZone: 'America/Bogota', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).split(/\/|,|:| /);
               return `${formattedDate[2]}-${formattedDate[0]}-${formattedDate[1]} ${formattedDate[3]}:${formattedDate[4]}:${formattedDate[5]}`;
             }
           }

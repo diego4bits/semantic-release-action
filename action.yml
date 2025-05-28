@@ -8,7 +8,7 @@ inputs:
   release_branch:
     description: 'Branch to perform the release from'
     required: false
-    default: 'main'
+    default: 'master'
   maven_settings_path:
     description: 'Path to Maven settings.xml (if needed)'
     required: false
@@ -45,7 +45,7 @@ runs:
         MAVEN_SETTINGS_PATH: ${{ inputs.maven_settings_path }}
       run: |
         cd ${{ github.workspace }}
-        npx semantic-release --no-ci
+        npx semantic-release 
         latest_tag=$(git describe --tags --abbrev=0)
         echo "release_version=${latest_tag}" >> $GITHUB_OUTPUT
       shell: bash  
