@@ -79,6 +79,5 @@ module.exports = {
         ].join('')
       }
     ]
-  ],
-  tagFormat: '${version}'
+  ]
 }
