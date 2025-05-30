@@ -1,6 +1,7 @@
 const { promisify } = require('util')
 const dateFormat = require('dateformat')
 const path = require('path')
+const { tagFormat } = require('./.prerelease-releaserc')
 const TEMPLATE_DIR = path.join(__dirname, 'templates')
 const readFileAsync = promisify(require('fs').readFile)
 const template = readFileAsync(path.join(TEMPLATE_DIR, '/default-template.hbs'))
@@ -79,5 +80,6 @@ module.exports = {
         ].join('')
       }
     ]
-  ]
+  ],
+  tagFormat: '${version}', // By default it use v0.0.0 if its not defined
 }
