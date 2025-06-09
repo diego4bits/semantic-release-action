@@ -76,7 +76,7 @@ module.exports = {
           "docs/CHANGELOG.md"
         ],
         message: [
-          ':bookmark: ${nextRelease.version} [skip ci]'
+          ':bookmark: ${nextRelease.version}' // Here was a [skip-ci]
         ].join('')
       }
     ]
